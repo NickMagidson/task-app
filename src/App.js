@@ -1,11 +1,10 @@
-import Overview from './Overview.';
+import React, { Component } from 'react';
+import Overview from './Overview';
 
-function App() {
-  return (
-    <div className="App">
-
-    </div>
-  );
+class App extends Component {
+  render() {
+    return <div>Hello Alice</div>
+  }
 }
 
 export default App;
