@@ -1,12 +1,18 @@
 import React, { Component } from 'react';
 import Overview from './Overview';
+import uniqid from 'uniqid';
+
+
 
 class App extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      task: { text: ''},
+      task: { 
+        text: '',
+        id: uniqid()
+      },
       tasks: [],
     };
   }
@@ -16,6 +22,7 @@ class App extends Component {
     this.setState({
       task : {
         text: e.target.value,
+        id: this.state.task.id,
       }
     });
   };
@@ -24,7 +31,10 @@ class App extends Component {
     e.preventDefault(); // To avoid refreshing the form after submitting
     this.setState({
       tasks: this.state.tasks.concat(this.state.task), // Adds task into the task array
-      task: { text: '' },
+      task: { 
+        text: '',
+        id: uniqid()
+       },
     })
   }
 
@@ -45,6 +55,7 @@ class App extends Component {
             Add Task
           </button>
         </form>
+        <Overview tasks={tasks} />
       </div>
     );
   }
