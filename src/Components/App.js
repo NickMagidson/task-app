@@ -56,21 +56,50 @@ class App extends Component {
     };
 
     const title = {
+      display: 'flex',
+      flexDirection: 'column',
       fontFamily: 'helvetica',
-      fontSize: '3em'
+      fontSize: '5.5em',
+      marginBottom: '20px',
+    }
+
+    const inputBar = {
+      width: '100%',
+      padding: '12px 20px',
+      margin: '8px 0',
+      display: 'inline-block',
+      border: '1px solid #ccc',
+      bordeRadius: '4px',
+      boxSizing: 'border-box',
+    }
+
+    const button = {
+      display: 'inline-block',
+      padding: '.75rem 1.25rem',
+      borderRadius: '10rem',
+      // BackgroundColor: 'blue',
+      // color: '#fff',
+      textTransform: 'uppercase',
+      fontSize: '1.2rem',
+      letterSpacing: '.15rem',
+      // transition: 'all .3s',
+      // position: 'relative',
+      // overflow: 'hidden',
+      zIndex: '1',
     }
 
     return(
-      <div>
-        <form style={box} onSubmit={this.onSumbitTask}>
+      <div style={box}>
+        <form onSubmit={this.onSumbitTask}>
           <label style={title} htmlFor="taskInput">Enter task</label>
-          <input 
+          <input
+            style={inputBar}
             onChange={this.handleChange}
             value={task.text}
             type="text" 
             id="taskInput"
           />
-          <button type="submit">
+          <button style={button} type="submit">
             Add Task
           </button>
         </form>
