@@ -53,6 +53,7 @@ class App extends Component {
       justifyContent: 'center',
       alignItems: 'center',
       height: '200px', 
+      marginTop: '100px',
     };
 
     const title = {
