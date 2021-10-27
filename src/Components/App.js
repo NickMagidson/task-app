@@ -38,13 +38,32 @@ class App extends Component {
     })
   }
 
+
+
+
+
+
   render() {
     const { task, tasks } = this.state;
 
+    // STYLING
+    const box = {
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'center',
+      alignItems: 'center',
+      height: '200px', 
+    };
+
+    const title = {
+      fontFamily: 'helvetica',
+      fontSize: '3em'
+    }
+
     return(
       <div>
-        <form onSubmit={this.onSumbitTask}>
-          <label htmlFor="taskInput">Enter task</label>
+        <form style={box} onSubmit={this.onSumbitTask}>
+          <label style={title} htmlFor="taskInput">Enter task</label>
           <input 
             onChange={this.handleChange}
             value={task.text}
